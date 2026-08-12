@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { overflow-x: hidden; }
+
+body {
+  background-color: #06080f;
+  color: #e8edf5;
+  font-family: 'Outfit', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #06080f; }
+::-webkit-scrollbar-thumb { background: #2a8fc4; border-radius: 2px; }
+::selection { background: rgba(42,143,196,0.35); color: #fff; }
+
+input, textarea, select, button { font-family: 'Outfit', system-ui, sans-serif; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.fade-up  { animation: fadeUp 0.75s 0.00s ease both; }
+.fade-up-1 { animation: fadeUp 0.75s 0.15s ease both; }
+.fade-up-2 { animation: fadeUp 0.75s 0.30s ease both; }
+.fade-up-3 { animation: fadeUp 0.75s 0.45s ease both; }
+
+.cyan-shimmer {
+  background: linear-gradient(90deg, #2a8fc4, #00c8ff, #2a8fc4);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ── Responsive grids ── */
+@media (max-width: 1000px) {
+  .hide-mobile { display: none !important; }
+  .show-mobile { display: flex !important; }
+  .two-col   { grid-template-columns: 1fr !important; }
+  .three-col { grid-template-columns: 1fr 1fr !important; }
+  .footer-cols { grid-template-columns: 1fr 1fr !important; }
+  .stats-row { grid-template-columns: 1fr 1fr !important; }
+  .stats-row > div { border-right: none !important; border-bottom: 1px solid rgba(42,143,196,0.18); }
+}
+@media (min-width: 1001px) {
+  .show-mobile { display: none !important; }
+}
+@media (max-width: 640px) {
+  .three-col   { grid-template-columns: 1fr !important; }
+  .footer-cols { grid-template-columns: 1fr 1fr !important; }
+  .stats-row   { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* ── Home page grids ── */
+@media (max-width: 900px) {
+  .pkg-three     { grid-template-columns: 1fr 1fr !important; }
+  .pkg-two       { grid-template-columns: 1fr 1fr !important; max-width: 100% !important; }
+  .addon-grid    { grid-template-columns: 1fr 1fr !important; }
+  .gallery-home  { grid-template-columns: 1fr 1fr !important; }
+  .ba-grid       { grid-template-columns: 1fr 1fr 1fr !important; }
+  .svc-home-grid { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 600px) {
+  .pkg-three      { grid-template-columns: 1fr !important; }
+  .pkg-two        { grid-template-columns: 1fr !important; }
+  .addon-grid     { grid-template-columns: 1fr !important; }
+  .ba-grid        { grid-template-columns: 1fr !important; }
+  .svc-home-grid  { grid-template-columns: 1fr !important; }
+  .features-strip { grid-template-columns: 1fr 1fr !important; max-width: 100% !important; }
+  .nav-logo       { height: 54px !important; }
+  .nav-bar        { height: 70px !important; }
+  .nav-spacer     { height: 70px !important; }
+}
+
+/* ── Coverage strip (Service Areas page) ── */
+@media (max-width: 900px) {
+  .coverage-strip { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 500px) {
+  .coverage-strip { grid-template-columns: 1fr !important; }
+  .coverage-strip > div { border-right: none !important; border-bottom: 1px solid rgba(42,143,196,0.18); }
+}
+
+/* ── Mobile spacing fixes ── */
+@media (max-width: 1000px) {
+  .two-col   { gap: 14px !important; background: transparent !important; }
+  .three-col { gap: 14px !important; background: transparent !important; }
+  .home-section { padding: 64px 0 !important; }
+  .home-inner { padding-left: 20px !important; padding-right: 20px !important; }
+}
+
+@media (max-width: 600px) {
+  section, header, footer { max-width: 100vw; overflow-x: hidden; }
+  .two-col   { gap: 16px !important; background: transparent !important; }
+  .three-col { gap: 16px !important; background: transparent !important; }
+  .stats-row { gap: 0 !important; }
+  .home-section { padding: 52px 0 !important; }
+  .home-inner   { padding-left: 16px !important; padding-right: 16px !important; }
+  .page-inner   { padding-left: 16px !important; padding-right: 16px !important; }
+  .pkg-three { gap: 16px !important; }
+  .pkg-two   { gap: 16px !important; }
+  .addon-grid { gap: 12px !important; background: transparent !important; }
+}
+
+/* ── Service areas city row ── */
+@media (max-width: 700px) {
+  .area-row { grid-template-columns: 1fr !important; }
+  .area-row > div:first-child { min-height: 90px !important; }
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Lux Detailing #1 Car detailing company in Washington",
+  "description": "This web application offers a seamless platform for managing and showcasing detailing services, enhancing customer engagement and service visibility.",
+  "icons": {
+    "icon": "/.figma/make/favicon.png"
+  },
+  "openGraph": {
+    "image": "/.figma/make/social-image.png"
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
